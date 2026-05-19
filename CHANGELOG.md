@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.4.0] - 2026-05-19
+### Added
+- Implemented `scripts/check_health.py` workspace integrity utility.
+- Integrated automated dashboard generation into the update workflow.
+- Established and enforced `flake8` linting for all workspace scripts.
+- Resolved submodule pointer issues and documented findings in `HANDOFF.md`.
+
 ## [1.3.0] - 2026-05-19
 ### Added
 - Enhanced `scripts/update_repos_v5.py` with `--sync` functionality for upstream updates.

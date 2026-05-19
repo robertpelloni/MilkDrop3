@@ -9,7 +9,7 @@
 
 ## Priority: Medium (Next Steps)
 - [x] **Submodule Integration:** Complete integration of core submodules (`aios`, `borg`, `metamcp`, `bobmani`, `fwber`, `bobcoin`).
-- [ ] **CI/CD:** Setup basic linting and validation for workspace-level scripts.
+- [x] **CI/CD:** Setup basic linting and validation for workspace-level scripts.
 - [x] **Dashboard:** Implement `scripts/generate_dashboard.py` to track submodule status.
 
 ## Priority: Low (Long-Term)

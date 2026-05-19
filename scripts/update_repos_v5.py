@@ -2,13 +2,19 @@
 import os
 import subprocess
 import sys
+import generate_dashboard
+
 
 def run_command(command, cwd=None):
     try:
-        result = subprocess.run(command, shell=True, check=True, capture_output=True, text=True, cwd=cwd)
+        result = subprocess.run(
+            command, shell=True, check=True, capture_output=True, text=True,
+            cwd=cwd
+        )
         return result.stdout.strip()
     except subprocess.CalledProcessError as e:
         return f"Error: {e.stderr.strip()}"
+
 
 def get_submodule_status():
     print("--- Submodule Status ---")
@@ -18,11 +24,12 @@ def get_submodule_status():
     else:
         print(status)
 
+
 def update_submodules():
     print("--- Updating Submodules ---")
-    # Using non-recursive update to avoid breakage in forks with missing internal mappings
     result = run_command("git submodule update --init")
     print(result if result else "Submodules updated successfully.")
+
 
 def sync_upstream():
     print("--- Syncing Upstream Changes ---")
@@ -38,17 +45,15 @@ def sync_upstream():
         path = parts[1]
 
         print(f"Checking {path}...")
-        # Check if upstream remote exists, if not, add it (based on presumed pattern)
         remotes = run_command("git remote", cwd=path)
         if "upstream" not in remotes:
-            # For simplicity, we'll skip adding upstream if it doesn't exist yet
-            # but we will fetch and merge from origin if it represents progress
             print(f"No upstream remote in {path}. Fetching from origin...")
             run_command("git fetch origin", cwd=path)
         else:
             print(f"Fetching from upstream in {path}...")
             run_command("git fetch upstream", cwd=path)
             run_command("git merge upstream/main --ff-only", cwd=path)
+
 
 def main():
     print("MilkDrop3 Omni-Workspace Submodule Manager v5")
@@ -62,6 +67,10 @@ def main():
 
     if "--sync" in sys.argv:
         sync_upstream()
+
+    print("--- Refreshing Dashboard ---")
+    generate_dashboard.generate_dashboard()
+
 
 if __name__ == "__main__":
     main()

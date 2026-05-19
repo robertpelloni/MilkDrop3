@@ -1,0 +1,12 @@
+# Changelog - MilkDrop3 Omni-Workspace
+
+All notable changes to this project will be documented in this file.
+
+## [1.0.1] - 2026-05-19
+### Added
+- Initial workspace structure and core documentation.
+- `VISION.md`, `ROADMAP.md`, `TODO.md`, `VERSION.md`.
+- `DEPLOY.md`, `CHANGELOG.md`, `HANDOFF.md`.
+- AI agent instructions (`AGENTS.md`, `CLAUDE.md`, etc.).
+- Foundational management scripts (`scripts/update_repos_v5.py`).
+- Root `README.md` and workspace directory structure.

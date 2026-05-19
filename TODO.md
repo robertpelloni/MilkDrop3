@@ -1,0 +1,16 @@
+# TODO - MilkDrop3 Omni-Workspace
+
+## Priority: High (Immediate Actions)
+- [x] **Project Setup:** Initialize root documentation (`VISION.md`, `ROADMAP.md`, etc.).
+- [x] **Management Scripts:** Implement `scripts/update_repos_v5.py` for submodule management.
+- [x] **Workspace Structure:** Create placeholder directories for `aios/`, `borg/`, `scripts/`, `logs/`.
+- [x] **Audit:** Perform a full audit of the current repository state and identify missing components.
+
+## Priority: Medium (Next Steps)
+- [ ] **Submodule Integration:** Start adding core submodules (e.g., `borg`, `itgmania`).
+- [ ] **CI/CD:** Setup basic linting and validation for workspace-level scripts.
+- [ ] **Dashboard:** Implement `scripts/generate_dashboard.py` to track submodule status.
+
+## Priority: Low (Long-Term)
+- [ ] **Documentation Gaps:** Expand `DEPLOY.md` with detailed submodule setup guides.
+- [ ] **Refactoring:** Consolidate redundant logic across workspace management scripts.

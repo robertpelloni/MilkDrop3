@@ -7,10 +7,9 @@
 - [x] Establish versioning and changelog standards.
 
 ## Phase 2: Orchestration
-- [x] Integrate `borg` for local control-plane management.
+- [x] Integrate core AI and application submodules (`aios`, `borg`, `metamcp`, `bobmani`, `fwber`, `bobcoin`).
 - [ ] Automate upstream syncing for all forks.
 - [ ] Implement health checks and regression testing for the entire ecosystem.
-- [ ] Populate the workspace with core directories (`aios/`, `bobmani/`, etc.).
 
 ## Phase 3: Intelligence
 - [ ] Connect `metamcp` for enhanced tool discovery and integration.

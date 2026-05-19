@@ -7,7 +7,7 @@
 - [x] **Audit:** Perform a full audit of the current repository state and identify missing components.
 
 ## Priority: Medium (Next Steps)
-- [x] **Submodule Integration:** Start adding core submodules (e.g., `borg`, `itgmania`).
+- [x] **Submodule Integration:** Complete integration of core submodules (`aios`, `borg`, `metamcp`, `bobmani`, `fwber`, `bobcoin`).
 - [ ] **CI/CD:** Setup basic linting and validation for workspace-level scripts.
 - [x] **Dashboard:** Implement `scripts/generate_dashboard.py` to track submodule status.
 

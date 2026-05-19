@@ -26,7 +26,8 @@ This dashboard tracks the status of all submodules within the MilkDrop3 Omni-Wor
 |-----------|------|----------------|--------|
 """
 
-    submodule_status = run_command("git submodule status --recursive")
+    # Use non-recursive status to avoid breakage from internal submodule issues in forks
+    submodule_status = run_command("git submodule status")
 
     if not submodule_status:
         dashboard_content += "| None | N/A | N/A | No submodules configured |\n"

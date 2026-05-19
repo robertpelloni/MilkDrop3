@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.0] - 2026-05-19
+### Added
+- Integrated core AI submodules (`aios`, `metamcp`).
+- Integrated application and engine submodules (`bobmani`, `fwber`, `bobcoin`).
+- Updated `scripts/generate_dashboard.py` for increased robustness with recursive submodules.
+- Performed comprehensive project audit after full submodule integration.
+
 ## [1.1.0] - 2026-05-19
 ### Added
 - Integrated `borg` submodule at `borg/`.

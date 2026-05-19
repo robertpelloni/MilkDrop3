@@ -1,3 +1,18 @@
 [submodule "borg"]
 	path = borg
 	url = https://github.com/robertpelloni/borg.git
+[submodule "aios"]
+	path = aios
+	url = https://github.com/robertpelloni/aios.git
+[submodule "metamcp"]
+	path = metamcp
+	url = https://github.com/robertpelloni/metamcp.git
+[submodule "bobmani"]
+	path = bobmani
+	url = https://github.com/robertpelloni/bobmani.git
+[submodule "fwber"]
+	path = fwber
+	url = https://github.com/robertpelloni/fwber.git
+[submodule "bobcoin"]
+	path = bobcoin
+	url = https://github.com/robertpelloni/bobcoin.git

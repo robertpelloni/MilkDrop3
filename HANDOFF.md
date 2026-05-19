@@ -1,35 +1,37 @@
 # Handoff - MilkDrop3 Omni-Workspace
 
-## Audit Overview (Session 2)
-- **Status:** Submodule Integration & Dashboarding
-- **Analyzed:** `borg` submodule structure and workspace dashboard requirements.
-- **Changed:** Integrated `borg` submodule, implemented dashboard generator.
-- **Implemented:** `scripts/generate_dashboard.py`, `SUBMODULE_DASHBOARD.md`.
+## Audit Overview (Session 3)
+- **Status:** Comprehensive Submodule Integration
+- **Analyzed:** Core AI, application, and game engine submodules.
+- **Changed:** Integrated `aios`, `metamcp`, `bobmani`, `fwber`, and `bobcoin` submodules.
+- **Implemented:** Updated `generate_dashboard.py` for better robustness.
 
 ## Inventory
-### Libraries & Packages
-- None in root.
-
 ### Submodules
-- **borg**: Integrated at `borg/`. Version: `v0.9.0-beta-1411-g124d80eb`.
+- **aios**: `aios/`. Commit: `124d80eb`.
+- **borg**: `borg/`. Commit: `124d80eb`.
+- **metamcp**: `metamcp/`. Commit: `eb217294`.
+- **bobmani**: `bobmani/`. Commit: `c46e63f1`.
+- **fwber**: `fwber/`. Commit: `f89b380b`.
+- **bobcoin**: `bobcoin/`. Commit: `f7cd1a78`.
+
+## Detailed Audit Results
+1. **Completed Features:** Workspace structure, base documentation, core submodule integration (AI & Apps), automated dashboarding.
+2. **Partially Implemented:** Submodule management scripts (active synchronization enabled).
+3. **Backend Features Not Wired:** Cross-submodule tool discovery (metamcp integration with borg/aios).
+4. **UI Missing/Unpolished:** Dashboard remains Markdown; needs live web/TUI representation.
+5. **Bugs/Fragile Areas:** Recursive submodule updates in internal forks cause `git submodule update` to fail due to missing mappings. Non-recursive status used for dashboard robustness.
+6. **Refactor Opportunities:** Script consolidation; move dashboard generation into a shared maintenance script.
+7. **Documentation Gaps:** Individual submodule onboarding within the workspace context.
+8. **Dependency Gaps:** Common workspace-level dev dependencies (linting, type-checking).
+9. **Deployment/Versioning Gaps:** Deployment remains manual; versioning follows strict protocol but is not automated.
+10. **Next High-Impact Tasks:** Fix internal submodule issues in forks; automate upstream syncing.
 
 ## Findings
-1. **Borg Complexity:** The `borg` submodule is a large Go/TypeScript monorepo with its own set of internal submodules and MCP servers.
-2. **Dashboard Success:** `scripts/generate_dashboard.py` successfully provides a bird's-eye view of submodule status.
-3. **Workspace Progress:** The directory structure is beginning to populate.
-4. **Detailed Audit Results:**
-   - **Completed Features:** Workspace structure, base documentation, submodule integration (`borg`), dashboarding.
-   - **Partially Implemented:** Submodule management scripts (v5).
-   - **Backend Features Not Wired:** `borg` integration with `aios` and `metamcp` is pending.
-   - **UI Missing/Unpolished:** Dashboard is currently a static Markdown file.
-   - **Bugs/Fragile Areas:** Recursive submodule updates can be brittle; need robust error handling in scripts.
-   - **Refactor Opportunities:** Consolidate redundant logic in `update_repos_v5.py` and `generate_dashboard.py`.
-   - **Documentation Gaps:** Submodule-specific setup guides are minimal.
-   - **Dependency Gaps:** Root workspace lacks specialized build tools for integrated submodules.
-   - **Deployment/Versioning Gaps:** Versioning is manual; automation needed.
-   - **Next High-Impact Tasks:** Integrate `aios` and `metamcp`; automate dashboard generation.
+- Some submodules (`aios`) contain broken internal submodule mappings in their forks, which prevents full recursive updates.
+- The monorepo structure is now fully populated with the primary target projects.
 
 ## Recommended Next Steps
-1. Integrate `aios` and `metamcp` submodules.
-2. Automate the dashboard generation in the update script.
-3. Enhance `DEPLOY.md` with submodule-specific setup details for `borg`.
+1. Address internal submodule mapping issues in `aios` and other forks.
+2. Implement automated upstream syncing in `scripts/update_repos_v5.py`.
+3. Establish workspace-level linting and CI.

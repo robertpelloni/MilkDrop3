@@ -5,6 +5,7 @@
 - [x] **Management Scripts:** Implement `scripts/update_repos_v5.py` for submodule management.
 - [x] **Workspace Structure:** Create placeholder directories for `aios/`, `borg/`, `scripts/`, `logs/`.
 - [x] **Audit:** Perform a full audit of the current repository state and identify missing components.
+- [x] **Submodule Fix:** Resolve broken internal submodule mappings in `aios` and `borg`.
 
 ## Priority: Medium (Next Steps)
 - [x] **Submodule Integration:** Complete integration of core submodules (`aios`, `borg`, `metamcp`, `bobmani`, `fwber`, `bobcoin`).

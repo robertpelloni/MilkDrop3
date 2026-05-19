@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.3.0] - 2026-05-19
+### Added
+- Enhanced `scripts/update_repos_v5.py` with `--sync` functionality for upstream updates.
+- Improved `SUBMODULE_DASHBOARD.md` with documented purposes for all submodules.
+- Fixed broken internal submodule mappings in `aios` and `borg`, enabling clean recursive updates.
+- Performed detailed audit of internal submodule structures.
+
 ## [1.2.0] - 2026-05-19
 ### Added
 - Integrated core AI submodules (`aios`, `metamcp`).

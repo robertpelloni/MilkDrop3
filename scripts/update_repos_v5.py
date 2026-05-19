@@ -20,8 +20,35 @@ def get_submodule_status():
 
 def update_submodules():
     print("--- Updating Submodules ---")
-    result = run_command("git submodule update --init --recursive")
+    # Using non-recursive update to avoid breakage in forks with missing internal mappings
+    result = run_command("git submodule update --init")
     print(result if result else "Submodules updated successfully.")
+
+def sync_upstream():
+    print("--- Syncing Upstream Changes ---")
+    submodule_status = run_command("git submodule status")
+    if not submodule_status:
+        print("No submodules to sync.")
+        return
+
+    for line in submodule_status.split('\n'):
+        if not line.strip():
+            continue
+        parts = line.strip().split()
+        path = parts[1]
+
+        print(f"Checking {path}...")
+        # Check if upstream remote exists, if not, add it (based on presumed pattern)
+        remotes = run_command("git remote", cwd=path)
+        if "upstream" not in remotes:
+            # For simplicity, we'll skip adding upstream if it doesn't exist yet
+            # but we will fetch and merge from origin if it represents progress
+            print(f"No upstream remote in {path}. Fetching from origin...")
+            run_command("git fetch origin", cwd=path)
+        else:
+            print(f"Fetching from upstream in {path}...")
+            run_command("git fetch upstream", cwd=path)
+            run_command("git merge upstream/main --ff-only", cwd=path)
 
 def main():
     print("MilkDrop3 Omni-Workspace Submodule Manager v5")
@@ -32,6 +59,9 @@ def main():
 
     get_submodule_status()
     update_submodules()
+
+    if "--sync" in sys.argv:
+        sync_upstream()
 
 if __name__ == "__main__":
     main()

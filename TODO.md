@@ -7,9 +7,9 @@
 - [x] **Audit:** Perform a full audit of the current repository state and identify missing components.
 
 ## Priority: Medium (Next Steps)
-- [ ] **Submodule Integration:** Start adding core submodules (e.g., `borg`, `itgmania`).
+- [x] **Submodule Integration:** Start adding core submodules (e.g., `borg`, `itgmania`).
 - [ ] **CI/CD:** Setup basic linting and validation for workspace-level scripts.
-- [ ] **Dashboard:** Implement `scripts/generate_dashboard.py` to track submodule status.
+- [x] **Dashboard:** Implement `scripts/generate_dashboard.py` to track submodule status.
 
 ## Priority: Low (Long-Term)
 - [ ] **Documentation Gaps:** Expand `DEPLOY.md` with detailed submodule setup guides.

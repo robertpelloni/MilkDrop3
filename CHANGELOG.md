@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.1.0] - 2026-05-19
+### Added
+- Integrated `borg` submodule at `borg/`.
+- Implemented `scripts/generate_dashboard.py` for submodule tracking.
+- Created `SUBMODULE_DASHBOARD.md`.
+- Updated `ROADMAP.md` and `TODO.md` to reflect progress.
+
 ## [1.0.1] - 2026-05-19
 ### Added
 - Initial workspace structure and core documentation.

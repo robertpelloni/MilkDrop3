@@ -31,7 +31,7 @@ def main():
         sys.exit(1)
 
     get_submodule_status()
-    # update_submodules() # Uncomment when submodules are added
+    update_submodules()
 
 if __name__ == "__main__":
     main()

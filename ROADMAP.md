@@ -7,7 +7,7 @@
 - [x] Establish versioning and changelog standards.
 
 ## Phase 2: Orchestration
-- [ ] Integrate `borg` for local control-plane management.
+- [x] Integrate `borg` for local control-plane management.
 - [ ] Automate upstream syncing for all forks.
 - [ ] Implement health checks and regression testing for the entire ecosystem.
 - [ ] Populate the workspace with core directories (`aios/`, `bobmani/`, etc.).

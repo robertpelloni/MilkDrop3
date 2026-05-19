@@ -3,6 +3,9 @@ import os
 import subprocess
 import sys
 import generate_dashboard
+import generate_project_structure
+import prune_broken_submodules
+import check_health
 
 
 def run_command(command, cwd=None):
@@ -68,8 +71,13 @@ def main():
     if "--sync" in sys.argv:
         sync_upstream()
 
-    print("--- Refreshing Dashboard ---")
+    print("--- Running Maintenance Utilities ---")
+    prune_broken_submodules.prune_broken(dry_run=True)
+    generate_project_structure.generate_project_structure()
     generate_dashboard.generate_dashboard()
+
+    print("--- Running Health Check ---")
+    check_health.main()
 
 
 if __name__ == "__main__":

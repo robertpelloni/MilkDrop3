@@ -19,15 +19,15 @@
 2. **Initialize & Sync Submodules:**
    ```bash
    # This will set up remotes and fetch the latest code
-   python scripts/update_repos_v5.py --sync
+   python scripts/workspace_cli.py update --sync
    ```
 3. **Environment Variables:**
    - Workspace level: Copy `.env.example` to `.env` if it exists.
    - Submodule level: Refer to individual submodule documentation (e.g., `borg/DEPLOY.md`).
 
 ## Submodule Management
-- **Universal Update:** `python scripts/update_repos_v5.py`
-- **Upstream Sync:** `python scripts/update_repos_v5.py --sync`
+- **Universal Update:** `python scripts/workspace_cli.py update`
+- **Upstream Sync:** `python scripts/workspace_cli.py update --sync`
 - **Bulk Commands:** Use `python scripts/workspace_run.py <command>` (e.g., `python scripts/workspace_run.py npm install`).
 
 ## Troubleshooting
@@ -46,6 +46,6 @@ git submodule update --init --recursive --force
 ### Broken Internal Gitlinks
 The workspace automatically prunes broken mode 160000 entries found in some upstream forks. If you encounter "No url found for submodule" errors, run:
 ```bash
-python scripts/update_repos_v5.py
+python scripts/workspace_cli.py update
 ```
 This will trigger the pruning and maintenance workflow.

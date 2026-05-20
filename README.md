@@ -26,7 +26,7 @@ To get started with the workspace, please refer to [DEPLOY.md](DEPLOY.md) for se
 git clone https://github.com/robertpelloni/MilkDrop3.git
 cd MilkDrop3
 # Initialize the workspace (coming soon)
-python scripts/update_repos_v5.py
+python scripts/workspace_cli.py update
 ```
 
 ## 🤖 AI Agent Guidelines

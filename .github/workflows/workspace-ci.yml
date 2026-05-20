@@ -1,0 +1,34 @@
+name: Workspace CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        submodules: false # Managed by our custom script
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.10'
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install .
+
+    - name: Lint with flake8
+      run: |
+        flake8 scripts/ src/workspace/
+
+    - name: Workspace Health Check
+      run: |
+        python scripts/workspace_cli.py health

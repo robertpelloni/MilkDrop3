@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.4.0] - 2026-05-20
+### Added
+- Implemented GitHub Actions CI workflow for automated health and linting.
+- Implemented Ecosystem Validation workflow for scheduled submodule testing.
+- Integrated CI/CD triggers for every push and PR to the main branch.
+- Achieved Milestone: Remote assurance of workspace health and stability.
+
 ## [2.3.0] - 2026-05-20
 ### Added
 - Implemented `src/workspace/session_orchestrator.py` for AI transition management.

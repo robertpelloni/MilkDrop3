@@ -15,6 +15,7 @@ import workspace_run               # noqa: E402
 import prune_broken_submodules     # noqa: E402
 import workspace_version           # noqa: E402
 import archive_handoff             # noqa: E402
+import workspace_monitor           # noqa: E402
 
 
 def main():
@@ -57,6 +58,14 @@ def main():
     # Archive
     subparsers.add_parser("archive", help="Archive current handoff")
 
+    # Monitor
+    monitor_parser = subparsers.add_parser(
+        "monitor", help="Start real-time monitoring"
+    )
+    monitor_parser.add_argument(
+        "--interval", type=int, default=5, help="Refresh interval in seconds"
+    )
+
     # Run bulk command
     run_parser = subparsers.add_parser("run", help="Run command in submodules")
     run_parser.add_argument("shell_command", help="Command to execute")
@@ -87,6 +96,8 @@ def main():
         workspace_version.update_version_file(new_ver)
     elif args.command == "archive":
         archive_handoff.archive_handoff()
+    elif args.command == "monitor":
+        workspace_monitor.run_monitor(interval=args.interval)
     elif args.command == "run":
         success = workspace_run.workspace_run(args.shell_command)
         sys.exit(0 if success else 1)

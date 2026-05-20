@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.1.0] - 2026-05-20
+### Added
+- Implemented `scripts/workspace_monitor.py` for real-time status and activity monitoring.
+- Added `monitor` subcommand to Workspace CLI.
+- Integrated log tailing into the monitoring interface.
+- Updated `ROADMAP.md` to reflect management interface progress.
+
 ## [2.0.0] - 2026-05-20
 ### Added
 - Implemented `scripts/archive_handoff.py` for automated session continuity.

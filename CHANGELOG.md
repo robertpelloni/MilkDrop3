@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.3.0] - 2026-05-20
+### Added
+- Implemented `src/workspace/session_orchestrator.py` for AI transition management.
+- Added `session start` and `session finish` subcommands to Workspace CLI.
+- Formalized workspace management as a Python package with `pyproject.toml`.
+- Automated the full session check-out workflow (sync, docs, health, version, archive).
+- Updated `ROADMAP.md` to reflect achievement of autonomous workflow layers.
+
 ## [2.2.0] - 2026-05-20
 ### Added
 - Refactored entire maintenance suite into a formal `src.workspace` Python package.

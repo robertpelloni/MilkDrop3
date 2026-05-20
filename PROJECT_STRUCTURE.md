@@ -1,6 +1,6 @@
 # Project Structure
 
-Last Updated: 2026-05-20 07:19:14
+Last Updated: 2026-05-20 09:09:11
 
 ## Overview
 This file provides an automated visualization of the MilkDrop3 Omni-Workspace hierarchy.
@@ -24,6 +24,7 @@ This file provides an automated visualization of the MilkDrop3 Omni-Workspace hi
     VERSION.md
     VISION.md
     copilot-instructions.md
+    pyproject.toml
     bobcoin/
         .borg_startup_marker
         .build_success
@@ -29548,6 +29549,7 @@ This file provides an automated visualization of the MilkDrop3 Omni-Workspace hi
             generate_dashboard.py
             generate_project_structure.py
             prune_broken_submodules.py
+            session_orchestrator.py
             test_ecosystem.py
             update_repos_v5.py
             web_dashboard.py
@@ -71453,6 +71455,7 @@ This file provides an automated visualization of the MilkDrop3 Omni-Workspace hi
             HANDOFF_v1.9.0_20260520_032738.md
             HANDOFF_v2.0.0_20260520_034004.md
             HANDOFF_v2.1.0_20260520_060143.md
+            HANDOFF_v2.2.0_20260520_071920.md
     bg/
         .borg-session.json
         .borg_startup_marker

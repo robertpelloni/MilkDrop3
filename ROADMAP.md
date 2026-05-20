@@ -17,6 +17,6 @@
  - [x] Create a unified dashboard for monitoring all submodule states.
 
 ## Phase 4: Expansion
-- [ ] Support for broader autonomous workflow layers.
+ - [x] Support for broader autonomous workflow layers (via Session Orchestration).
 - [x] Mobile and desktop parity for the management interface (via CLI Monitor).
 - [ ] Community-driven submodule marketplace.

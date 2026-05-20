@@ -19,7 +19,8 @@ from src.workspace import (  # noqa: E402
     workspace_version,
     archive_handoff,
     workspace_monitor,
-    web_dashboard
+    web_dashboard,
+    session_orchestrator
 )
 
 
@@ -62,6 +63,25 @@ def main():
 
     # Archive
     subparsers.add_parser("archive", help="Archive current handoff")
+
+    # Session
+    session_parser = subparsers.add_parser(
+        "session", help="Manage development session lifecycle"
+    )
+    session_subparsers = session_parser.add_subparsers(
+        dest="session_command", help="Session command"
+    )
+    start_parser = session_subparsers.add_parser(
+        "start", help="Start a new session"
+    )
+    start_parser.add_argument("model", help="Active AI model name")
+    finish_parser = session_subparsers.add_parser(
+        "finish", help="Finish the current session"
+    )
+    finish_parser.add_argument(
+        "--bump", choices=["major", "minor", "patch"], default="minor",
+        help="Part of version to bump"
+    )
 
     # Monitor
     monitor_parser = subparsers.add_parser(
@@ -109,6 +129,14 @@ def main():
         workspace_version.update_version_file(new_ver)
     elif args.command == "archive":
         archive_handoff.archive_handoff()
+    elif args.command == "session":
+        if args.session_command == "start":
+            session_orchestrator.start_session(args.model)
+        elif args.session_command == "finish":
+            success = session_orchestrator.finish_session(bump=args.bump)
+            sys.exit(0 if success else 1)
+        else:
+            session_parser.print_help()
     elif args.command == "monitor":
         workspace_monitor.run_monitor(interval=args.interval)
     elif args.command == "web":

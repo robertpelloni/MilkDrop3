@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "milkdrop3-workspace"
+version = "2.2.0"
+description = "Management toolkit for the MilkDrop3 Omni-Workspace"
+authors = [
+    {name = "Robert Pelloni", email = "pelloni.robert@gmail.com"}
+]
+dependencies = [
+    "flake8"
+]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+packages = ["workspace"]
+
+[tool.flake8]
+max-line-length = 79
+exclude = [".git", "__pycache__", "docs", "aios", "borg", "metamcp", "bobmani", "fwber", "bobcoin", "itgmania", "okgame", "bg", "raindropioapp"]

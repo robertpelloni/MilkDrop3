@@ -6,6 +6,7 @@ import generate_dashboard
 import generate_project_structure
 import prune_broken_submodules
 import check_health
+import test_ecosystem
 
 
 def run_command(command, cwd=None):
@@ -75,6 +76,9 @@ def main():
     prune_broken_submodules.prune_broken(dry_run=True)
     generate_project_structure.generate_project_structure()
     generate_dashboard.generate_dashboard()
+
+    print("--- Running Ecosystem Validation ---")
+    test_ecosystem.test_ecosystem()
 
     print("--- Running Health Check ---")
     check_health.main()

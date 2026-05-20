@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.6.0] - 2026-05-19
+### Added
+- Implemented `scripts/workspace_run.py` for cross-submodule command execution.
+- Implemented `scripts/test_ecosystem.py` for consolidated submodule health validation.
+- Integrated ecosystem testing into the core `update_repos_v5.py` workflow.
+- Updated `ROADMAP.md` to reflect completion of ecosystem-wide health checks.
+
 ## [1.5.0] - 2026-05-19
 ### Added
 - Implemented `scripts/prune_broken_submodules.py` for automated workspace maintenance.

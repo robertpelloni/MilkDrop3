@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.7.0] - 2026-05-19
+### Added
+- Implemented `scripts/workspace_log.py` for centralized workspace logging.
+- Automated upstream remote management in `scripts/update_repos_v5.py`.
+- Enhanced `DEPLOY.md` with detailed setup and troubleshooting for core submodules.
+- Refactored all management scripts for unified logging and integration.
+
 ## [1.6.0] - 2026-05-19
 ### Added
 - Implemented `scripts/workspace_run.py` for cross-submodule command execution.

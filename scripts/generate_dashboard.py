@@ -2,6 +2,7 @@
 import os
 import subprocess
 import datetime
+import workspace_log
 
 
 def run_command(command):
@@ -31,7 +32,7 @@ SUBMODULE_INFO = {
 
 
 def generate_dashboard():
-    print("Generating Submodule Dashboard...")
+    workspace_log.info("Generating submodule dashboard...")
 
     now = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
@@ -79,7 +80,7 @@ MilkDrop3 Omni-Workspace.
     with open("SUBMODULE_DASHBOARD.md", "w") as f:
         f.write(dashboard_content)
 
-    print("SUBMODULE_DASHBOARD.md generated successfully.")
+    workspace_log.success("SUBMODULE_DASHBOARD.md updated.")
 
 
 if __name__ == "__main__":

@@ -2,6 +2,7 @@
 import subprocess
 import sys
 import os
+import workspace_log
 
 
 def run_command(command, cwd=None):
@@ -33,24 +34,26 @@ def get_configured_submodules():
 def workspace_run(command):
     submodules = get_configured_submodules()
     if not submodules:
-        print("No submodules configured.")
+        workspace_log.warn("No submodules configured.")
         return
 
-    print(f"--- Running '{command}' across {len(submodules)} submodules ---")
+    workspace_log.info(f"Running '{command}' across {len(submodules)} "
+                       "submodules")
     results = {}
 
     for path in submodules:
         if not os.path.isdir(path):
-            print(f"[SKIP] {path} (Directory not found)")
+            workspace_log.warn(f"Skipping {path} (Directory not found)")
             continue
 
-        print(f"\n[RUN] {path}:")
+        workspace_log.info(f"Running in {path}...")
         code, out, err = run_command(command, cwd=path)
 
         if code == 0:
-            print(out if out else "Success (No output)")
+            if out:
+                print(out)
         else:
-            print(f"FAILED (Code: {code})")
+            workspace_log.error(f"Failed in {path} (Code: {code})")
             if out:
                 print(f"STDOUT: {out}")
             if err:
@@ -58,7 +61,7 @@ def workspace_run(command):
 
         results[path] = code
 
-    print("\n--- Summary ---")
+    workspace_log.info("Execution Summary:")
     all_success = True
     for path, code in results.items():
         status = "OK" if code == 0 else "FAIL"

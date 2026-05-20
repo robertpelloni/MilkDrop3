@@ -2,52 +2,47 @@
 import workspace_run
 import sys
 import os
+import workspace_log
 
 
 def test_ecosystem():
-    print("--- Validating Ecosystem Health ---")
-
-    # Define test strategies for different submodule types
-    # We'll use a pragmatic approach: if a package.json exists, try 'npm test'
-    # If go.mod exists, try 'go test ./...'
+    workspace_log.info("Validating ecosystem health...")
 
     submodules = workspace_run.get_configured_submodules()
     if not submodules:
-        print("No submodules to test.")
+        workspace_log.warn("No submodules to test.")
         return True
 
     results = {}
     for path in submodules:
         if not os.path.isdir(path):
-            print(f"[SKIP] {path} (Not cloned)")
+            workspace_log.warn(f"Skipping {path} (Not cloned)")
             continue
 
-        print(f"\n[TEST] {path}:")
+        workspace_log.info(f"Testing {path}...")
 
         test_cmd = None
         if os.path.exists(os.path.join(path, "package.json")):
-            # Use lint check as a proxy for basic health
             test_cmd = "npm run lint --if-present"
         elif os.path.exists(os.path.join(path, "go.mod")):
             test_cmd = "go vet ./..."
 
         if test_cmd:
-            print(f"Running: {test_cmd}")
             code, out, err = workspace_run.run_command(test_cmd, cwd=path)
             if code == 0:
-                print("Pass")
+                workspace_log.success(f"{path}: Pass")
             else:
-                print(f"FAIL (Code: {code})")
+                workspace_log.error(f"{path}: FAIL (Code: {code})")
                 if out:
                     print(f"STDOUT: {out}")
                 if err:
                     print(f"STDERR: {err}")
             results[path] = code
         else:
-            print("No supported test suite found. Basic check: OK")
+            workspace_log.info(f"{path}: No supported test suite. Basic OK.")
             results[path] = 0
 
-    print("\n--- Ecosystem Test Summary ---")
+    workspace_log.info("Ecosystem Test Summary:")
     all_success = True
     for path, code in results.items():
         status = "PASS" if code == 0 else "FAIL"

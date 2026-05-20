@@ -1,6 +1,6 @@
 # Project Structure
 
-Last Updated: 2026-05-20 00:19:42
+Last Updated: 2026-05-20 01:35:39
 
 ## Overview
 This file provides an automated visualization of the MilkDrop3 Omni-Workspace hierarchy.
@@ -29727,6 +29727,8 @@ This file provides an automated visualization of the MilkDrop3 Omni-Workspace hi
                 nextjs.json
                 package.json
                 react-library.json
+                .turbo/
+                    turbo-lint.log
             trpc/
                 eslint.config.mjs
                 package.json
@@ -29780,6 +29782,8 @@ This file provides an automated visualization of the MilkDrop3 Omni-Workspace hi
                 next.js
                 package.json
                 react-internal.js
+                .turbo/
+                    turbo-lint.log
             zod-types/
                 .gitignore
                 eslint.config.mjs
@@ -29822,6 +29826,8 @@ This file provides an automated visualization of the MilkDrop3 Omni-Workspace hi
                     tools.zod.ts
                     wasm.zod.ts
                     webhook.zod.ts
+                .turbo/
+                    turbo-lint.log
         apps/
             backend/
                 .gitignore
@@ -30378,6 +30384,14 @@ This file provides an automated visualization of the MilkDrop3 Omni-Workspace hi
         .github/
             workflows/
                 docker-publish.yml
+        .turbo/
+            cache/
+                c1f7be3fbb5b42cc-manifest.json
+                c1f7be3fbb5b42cc-meta.json
+                c1f7be3fbb5b42cc.tar.zst
+                f64e6834e6599d26-manifest.json
+                f64e6834e6599d26-meta.json
+                f64e6834e6599d26.tar.zst
     borg/
         .dockerignore
         .env.example
@@ -35860,8 +35874,6 @@ This file provides an automated visualization of the MilkDrop3 Omni-Workspace hi
                 FederationHttpSignature.test.ts
                 auth.test.ts
         .jules/
-            sessions/
-                4831724768840436969.md
             memory/
                 architecture.md
         .github/
@@ -35943,6 +35955,7 @@ This file provides an automated visualization of the MilkDrop3 Omni-Workspace hi
         prune_broken_submodules.py
         test_ecosystem.py
         update_repos_v5.py
+        workspace_log.py
         workspace_run.py
     bobmani/
         .git
@@ -35961,4 +35974,5 @@ This file provides an automated visualization of the MilkDrop3 Omni-Workspace hi
         copilot-instructions.md
     logs/
         .gitkeep
+        workspace_2026-05-20.log
 ```

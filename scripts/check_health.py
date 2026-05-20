@@ -2,6 +2,7 @@
 import os
 import subprocess
 import sys
+import workspace_log
 
 
 MANDATORY_FILES = [
@@ -41,69 +42,67 @@ def run_command(command, cwd=None):
 
 
 def check_files():
-    print("--- Checking Mandatory Files ---")
+    workspace_log.info("Checking mandatory files...")
     all_present = True
     for f in MANDATORY_FILES:
         if os.path.exists(f):
             print(f"[OK] {f}")
         else:
-            print(f"[MISSING] {f}")
+            workspace_log.error(f"Missing mandatory file: {f}")
             all_present = False
     return all_present
 
 
 def check_dirs():
-    print("\n--- Checking Mandatory Directories ---")
+    workspace_log.info("Checking mandatory directories...")
     all_present = True
     for d in MANDATORY_DIRS:
         if os.path.isdir(d):
             print(f"[OK] {d}/")
         else:
-            print(f"[MISSING] {d}/")
+            workspace_log.error(f"Missing mandatory directory: {d}/")
             all_present = False
     return all_present
 
 
 def check_submodules():
-    print("\n--- Checking Submodule Health ---")
+    workspace_log.info("Checking submodule health...")
     status_output = subprocess.run(
         ['git', 'submodule', 'status'], capture_output=True, text=True
     ).stdout
     if not status_output:
-        print("No submodules found.")
+        workspace_log.info("No submodules found.")
         return True
 
     healthy = True
     for line in status_output.split('\n'):
         if not line.strip():
             continue
-        # git submodule status output:
-        # ' ' (space) means synced
-        # '+' means modified/outdated
-        # '-' means not initialized
-        # 'U' means conflict
         if line.startswith(' ') or not line.startswith(('-', '+', 'U')):
             print(f"[OK] {line.strip()}")
         else:
-            print(f"[ISSUE] {line.strip()}")
+            workspace_log.warn(f"Submodule issue detected: {line.strip()}")
             healthy = False
     return healthy
 
 
 def main():
-    print("MilkDrop3 Omni-Workspace Health Check")
+    workspace_log.info("Starting workspace health check...")
     f_ok = check_files()
     d_ok = check_dirs()
     s_ok = check_submodules()
 
-    print("\n--- Summary ---")
     if f_ok and d_ok and s_ok:
-        print("Workspace is HEALTHY.")
-        sys.exit(0)
+        workspace_log.success("Workspace is HEALTHY.")
+        # Return success instead of exiting to allow for script integration
+        return True
     else:
-        print("Workspace has ISSUES.")
-        sys.exit(1)
+        workspace_log.error("Workspace has ISSUES.")
+        return False
 
 
 if __name__ == "__main__":
-    main()
+    if main():
+        sys.exit(0)
+    else:
+        sys.exit(1)

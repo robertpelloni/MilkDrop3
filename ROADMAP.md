@@ -8,7 +8,7 @@
 
 ## Phase 2: Orchestration
 - [x] Integrate core AI and application submodules (`aios`, `borg`, `metamcp`, `bobmani`, `fwber`, `bobcoin`).
-- [ ] Automate upstream syncing for all forks.
+- [x] Automate upstream syncing for all forks.
 - [x] Implement health checks and regression testing for the entire ecosystem.
 
 ## Phase 3: Intelligence

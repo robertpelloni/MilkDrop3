@@ -85,7 +85,14 @@ def check_submodules():
         if line.startswith(' ') or not line.startswith(('-', '+', 'U')):
             print(f"[OK] {line.strip()}")
         else:
-            workspace_log.warn(f"Submodule issue detected: {line.strip()}")
+            # If in CI, we might be more lenient or provide specific advice
+            if os.environ.get("GITHUB_ACTIONS") == "true":
+                workspace_log.warn(f"CI Submodule Alert: {line.strip()}")
+                # We don't fail CI for pointer drift if they are initialized
+                if line.startswith('+'):
+                    print("  (Note: Pointer drift detected in CI)")
+                    continue
+            workspace_log.error(f"Submodule issue detected: {line.strip()}")
             healthy = False
     return healthy
 

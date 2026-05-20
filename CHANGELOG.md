@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.4.1] - 2026-05-20
+### Fixed
+- Stabilized GitHub Actions CI by adding submodule initialization step.
+- Enhanced `check_health.py` to be environment-aware and handle CI pointer drift.
+- Suppressed Node.js deprecation warnings in CI environment.
+
 ## [2.4.0] - 2026-05-20
 ### Added
 - Implemented GitHub Actions CI workflow for automated health and linting.

@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
-from . import workspace_log
-from . import workspace_session
-from . import check_health
-from . import update_repos_v5
-from . import archive_handoff
-from . import generate_project_structure
-from . import generate_dashboard
-from . import workspace_version
+from ..core import workspace_log
+from ..core import workspace_session
+from ..maintenance import check_health
+from ..maintenance import update_repos_v5
+from ..documentation import archive_handoff
+from ..documentation import generate_project_structure
+from ..documentation import generate_dashboard
+from ..core import workspace_version
 
 
 def start_session(model_name):

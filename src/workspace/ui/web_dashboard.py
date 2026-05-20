@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 from http.server import HTTPServer, BaseHTTPRequestHandler
-from . import workspace_log
+from ..core import workspace_log
 
 
 class DashboardHandler(BaseHTTPRequestHandler):

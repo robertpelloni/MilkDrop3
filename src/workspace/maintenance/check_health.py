@@ -2,7 +2,7 @@
 import os
 import subprocess
 import sys
-from . import workspace_log
+from ..core import workspace_log
 
 
 MANDATORY_FILES = [

@@ -2,7 +2,7 @@
 import os
 import subprocess
 import datetime
-from . import workspace_log
+from ..core import workspace_log
 
 
 def run_command(command):

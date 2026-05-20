@@ -20,7 +20,8 @@ from src.workspace import (  # noqa: E402
     archive_handoff,
     workspace_monitor,
     web_dashboard,
-    session_orchestrator
+    session_orchestrator,
+    build
 )
 
 
@@ -44,6 +45,9 @@ def main():
 
     # Test
     subparsers.add_parser("test", help="Run ecosystem-wide tests")
+
+    # Build
+    subparsers.add_parser("build", help="Run ecosystem-wide builds")
 
     # Documentation
     subparsers.add_parser("docs", help="Refresh project documentation")
@@ -118,6 +122,9 @@ def main():
         sys.exit(0 if success else 1)
     elif args.command == "test":
         success = test_ecosystem.run_ecosystem_tests()
+        sys.exit(0 if success else 1)
+    elif args.command == "build":
+        success = build.run_builds()
         sys.exit(0 if success else 1)
     elif args.command == "docs":
         generate_project_structure.generate_project_structure()

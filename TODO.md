@@ -14,6 +14,6 @@
 
 ## Priority: Low (Long-Term)
 - [x] **Documentation Gaps:** Expand `DEPLOY.md` with detailed submodule setup guides.
-- [x] **Refactoring:** Consolidate redundant logic across workspace management scripts into a unified CLI.
+ - [x] **Refactoring:** Maturation of workspace management into a structured Python package.
 - [x] **Submodule Expansion:** Integrate additional core repositories (`itgmania`, `okgame`, etc.).
 - [x] **Automated Versioning:** Implement a semver-lite versioning utility within the CLI.

@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.5.0] - 2026-05-20
+### Added
+- Refactored `src.workspace` into a structured sub-package hierarchy (core, maintenance, documentation, execution, ui).
+- Implemented consolidated build system in `src.workspace.execution.build`.
+- Added `build` subcommand to Workspace CLI.
+- Integrated automated session transition management into the core hierarchy.
+- Professionalized package structure with domain-specific modularity.
+
 ## [2.4.1] - 2026-05-20
 ### Fixed
 - Stabilized GitHub Actions CI by adding submodule initialization step.

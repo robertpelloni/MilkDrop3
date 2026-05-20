@@ -2,7 +2,7 @@
 from . import workspace_run
 import sys
 import os
-from . import workspace_log
+from ..core import workspace_log
 
 
 def run_ecosystem_tests():

@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.9.0] - 2026-05-20
+### Added
+- Integrated 4 additional core submodules: `itgmania`, `okgame`, `bg`, and `raindropioapp`.
+- Implemented `scripts/workspace_version.py` for automated semver-lite versioning.
+- Added `version` subcommand to Workspace CLI.
+- Enhanced `SUBMODULE_DASHBOARD.md` with descriptions for all 10 core submodules.
+
 ## [1.8.0] - 2026-05-20
 ### Added
 - Implemented `scripts/workspace_cli.py` as a unified entry point for all management tasks.

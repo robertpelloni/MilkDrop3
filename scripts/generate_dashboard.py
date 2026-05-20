@@ -28,6 +28,13 @@ SUBMODULE_INFO = {
              "Experimental social networking layer.",
     "bobcoin": "Blockchain and cryptocurrency project "
                "integrated into the ecosystem.",
+    "itgmania": "Cross-platform rhythm game engine based on StepMania. "
+                "Part of the core rhythm game suite.",
+    "okgame": "Open source game engine and experimental "
+              "gaming framework.",
+    "bg": "Board game engine and digital tabletop platform.",
+    "raindropioapp": "Web platform and productivity tool integrated "
+                     "with the workspace ecosystem.",
 }
 
 

@@ -13,6 +13,7 @@ import generate_dashboard          # noqa: E402
 import generate_project_structure  # noqa: E402
 import workspace_run               # noqa: E402
 import prune_broken_submodules     # noqa: E402
+import workspace_version           # noqa: E402
 
 
 def main():
@@ -45,6 +46,13 @@ def main():
         "--fix", action="store_true", help="Apply fixes"
     )
 
+    # Version
+    version_parser = subparsers.add_parser("version", help="Manage versioning")
+    version_parser.add_argument(
+        "--bump", choices=["major", "minor", "patch"], default="minor",
+        help="Part of version to bump"
+    )
+
     # Run bulk command
     run_parser = subparsers.add_parser("run", help="Run command in submodules")
     run_parser.add_argument("shell_command", help="Command to execute")
@@ -70,6 +78,9 @@ def main():
         generate_dashboard.generate_dashboard()
     elif args.command == "prune":
         prune_broken_submodules.prune_broken(dry_run=not args.fix)
+    elif args.command == "version":
+        new_ver = workspace_version.bump_version(args.bump)
+        workspace_version.update_version_file(new_ver)
     elif args.command == "run":
         success = workspace_run.workspace_run(args.shell_command)
         sys.exit(0 if success else 1)

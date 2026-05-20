@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.5.1] - 2026-05-20
+### Added
+- Comprehensive audit of project vision and roadmap based on user feedback.
+- Updated `VISION.md` with core foundational ideas and design philosophy.
+- Refined `UNIVERSAL_LLM_INSTRUCTIONS.md` and `AGENTS.md` for better AI autonomy.
+- New `IDEAS.md` generation task added to TODO.
+- Unified versioning across `VERSION.md` and `pyproject.toml`.
+
 ## [2.5.0] - 2026-05-20
 ### Added
 - Refactored `src.workspace` into a structured sub-package hierarchy (core, maintenance, documentation, execution, ui).

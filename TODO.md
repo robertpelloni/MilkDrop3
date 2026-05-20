@@ -1,19 +1,21 @@
 # TODO - MilkDrop3 Omni-Workspace
 
-## Priority: High (Immediate Actions)
-- [x] **Project Setup:** Initialize root documentation (`VISION.md`, `ROADMAP.md`, etc.).
-- [x] **Management Scripts:** Implement `scripts/workspace_cli.py` for submodule management.
-- [x] **Workspace Structure:** Create placeholder directories for `aios/`, `borg/`, `scripts/`, `logs/`.
-- [x] **Audit:** Perform a full audit of the current repository state and identify missing components.
-- [x] **Submodule Fix:** Resolve broken internal submodule mappings in `aios` and `borg`.
+## Priority: Extreme (Next Implementation)
+- [ ] **Automated Branch Consolidation:** Implement a script/CLI command to intelligently merge all `robertpelloni` local feature branches into their respective main branches across all submodules.
+- [ ] **Submodule IDEAS Generation:** Create `IDEAS.md` for each of the 10 core submodules, analyzing their specific codebases in depth.
+- [ ] **Metamcp Fix:** Resolve the `metamcp` linting/dependency failure in the sandbox environment (missing `@repo/eslint-config`).
 
-## Priority: Medium (Next Steps)
-- [x] **Submodule Integration:** Complete integration of core submodules (`aios`, `borg`, `metamcp`, `bobmani`, `fwber`, `bobcoin`).
- - [x] **CI/CD:** Established GitHub Actions for automated linting and health checks.
-- [x] **Dashboard:** Implement `scripts/generate_dashboard.py` to track submodule status.
+## Priority: High
+- [ ] **Unified Deployment:** Implement a `deploy` subcommand in `workspace_cli.py` to handle coordinated deployments.
+- [ ] **Parallel Builds:** Expand `src/workspace/execution/build.py` to support parallel submodule builds.
+- [ ] **Global Memory Implementation:** Finalize the connection between `borg`, `aios`, and the workspace root for persistent session memory.
 
-## Priority: Low (Long-Term)
-- [x] **Documentation Gaps:** Expand `DEPLOY.md` with detailed submodule setup guides.
- - [x] **Refactoring:** Maturation of workspace management into a structured Python package.
-- [x] **Submodule Expansion:** Integrate additional core repositories (`itgmania`, `okgame`, etc.).
-- [x] **Automated Versioning:** Implement a semver-lite versioning utility within the CLI.
+## Priority: Medium
+- [ ] **UI Polish:** Audit `src/workspace/ui/web_dashboard.py` and ensure all features are represented with full labels, descriptions, and tooltips.
+- [ ] **Library Inventory:** Create a comprehensive `docs/LIBRARY_INVENTORY.md` listing every major dependency across the ecosystem.
+- [ ] **TUI Dashboard:** Implement a rich Terminal UI (TUI) for the `monitor` command using a library like `rich` or `textual`.
+
+## Priority: Low (Ongoing)
+- [ ] **Upstream Vigilance:** Continuously monitor and merge changes from upstream parents of all forks.
+- [ ] **Documentation Depth:** Regularly audit and expand the "why" comments in all management scripts.
+- [ ] **Refactoring:** Continuous cleanup of `src/workspace` sub-packages.

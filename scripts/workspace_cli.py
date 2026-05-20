@@ -14,6 +14,7 @@ import generate_project_structure  # noqa: E402
 import workspace_run               # noqa: E402
 import prune_broken_submodules     # noqa: E402
 import workspace_version           # noqa: E402
+import archive_handoff             # noqa: E402
 
 
 def main():
@@ -53,6 +54,9 @@ def main():
         help="Part of version to bump"
     )
 
+    # Archive
+    subparsers.add_parser("archive", help="Archive current handoff")
+
     # Run bulk command
     run_parser = subparsers.add_parser("run", help="Run command in submodules")
     run_parser.add_argument("shell_command", help="Command to execute")
@@ -81,6 +85,8 @@ def main():
     elif args.command == "version":
         new_ver = workspace_version.bump_version(args.bump)
         workspace_version.update_version_file(new_ver)
+    elif args.command == "archive":
+        archive_handoff.archive_handoff()
     elif args.command == "run":
         success = workspace_run.workspace_run(args.shell_command)
         sys.exit(0 if success else 1)

@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.0.0] - 2026-05-20
+### Added
+- Implemented `scripts/archive_handoff.py` for automated session continuity.
+- Implemented `scripts/workspace_session.py` to track active AI models and session state.
+- Integrated handoff archiving and session management into Workspace CLI.
+- Reached milestone: Fully populated and automated Monorepo Control Plane.
+
 ## [1.9.0] - 2026-05-20
 ### Added
 - Integrated 4 additional core submodules: `itgmania`, `okgame`, `bg`, and `raindropioapp`.

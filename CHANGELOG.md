@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.8.0] - 2026-05-20
+### Added
+- Implemented `scripts/workspace_cli.py` as a unified entry point for all management tasks.
+- Refactored all maintenance scripts into modular, importable components.
+- Added `prune` subcommand to CLI for automated gitlink cleanup.
+- Improved CLI error handling and user feedback.
+
 ## [1.7.0] - 2026-05-19
 ### Added
 - Implemented `scripts/workspace_log.py` for centralized workspace logging.

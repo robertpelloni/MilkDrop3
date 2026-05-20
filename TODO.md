@@ -14,4 +14,4 @@
 
 ## Priority: Low (Long-Term)
 - [ ] **Documentation Gaps:** Expand `DEPLOY.md` with detailed submodule setup guides.
-- [ ] **Refactoring:** Consolidate redundant logic across workspace management scripts.
+- [x] **Refactoring:** Consolidate redundant logic across workspace management scripts into a unified CLI.

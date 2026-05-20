@@ -86,7 +86,7 @@ def check_submodules():
     return healthy
 
 
-def main():
+def run_health_check():
     workspace_log.info("Starting workspace health check...")
     f_ok = check_files()
     d_ok = check_dirs()
@@ -94,15 +94,18 @@ def main():
 
     if f_ok and d_ok and s_ok:
         workspace_log.success("Workspace is HEALTHY.")
-        # Return success instead of exiting to allow for script integration
         return True
     else:
         workspace_log.error("Workspace has ISSUES.")
         return False
 
 
-if __name__ == "__main__":
-    if main():
+def main():
+    if run_health_check():
         sys.exit(0)
     else:
         sys.exit(1)
+
+
+if __name__ == "__main__":
+    main()

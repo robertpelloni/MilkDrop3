@@ -77,17 +77,12 @@ def sync_upstream():
             run_command("git merge upstream/master --ff-only", cwd=path)
 
 
-def main():
-    workspace_log.info("MilkDrop3 Omni-Workspace Submodule Manager v5")
-
-    if not os.path.exists(".git"):
-        workspace_log.error("Must be run from the root of a git repository.")
-        sys.exit(1)
-
+def orchestrate_update(sync=False):
+    workspace_log.info("Starting workspace update workflow...")
     get_submodule_status()
     update_submodules()
 
-    if "--sync" in sys.argv:
+    if sync:
         sync_upstream()
 
     workspace_log.info("Running maintenance utilities...")
@@ -96,10 +91,21 @@ def main():
     generate_dashboard.generate_dashboard()
 
     workspace_log.info("Running ecosystem validation...")
-    test_ecosystem.test_ecosystem()
+    test_ecosystem.run_ecosystem_tests()
 
     workspace_log.info("Running health check...")
-    check_health.main()
+    check_health.run_health_check()
+
+
+def main():
+    workspace_log.info("MilkDrop3 Omni-Workspace Submodule Manager v5")
+
+    if not os.path.exists(".git"):
+        workspace_log.error("Must be run from the root of a git repository.")
+        sys.exit(1)
+
+    sync = "--sync" in sys.argv
+    orchestrate_update(sync=sync)
 
 
 if __name__ == "__main__":

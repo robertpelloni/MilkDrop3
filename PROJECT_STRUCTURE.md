@@ -1,6 +1,6 @@
 # Project Structure
 
-Last Updated: 2026-05-20 01:35:39
+Last Updated: 2026-05-20 02:00:50
 
 ## Overview
 This file provides an automated visualization of the MilkDrop3 Omni-Workspace hierarchy.
@@ -35955,6 +35955,7 @@ This file provides an automated visualization of the MilkDrop3 Omni-Workspace hi
         prune_broken_submodules.py
         test_ecosystem.py
         update_repos_v5.py
+        workspace_cli.py
         workspace_log.py
         workspace_run.py
     bobmani/

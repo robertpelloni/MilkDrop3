@@ -5,7 +5,7 @@ import os
 import workspace_log
 
 
-def test_ecosystem():
+def run_ecosystem_tests():
     workspace_log.info("Validating ecosystem health...")
 
     submodules = workspace_run.get_configured_submodules()
@@ -54,7 +54,7 @@ def test_ecosystem():
 
 
 def main():
-    success = test_ecosystem()
+    success = run_ecosystem_tests()
     sys.exit(0 if success else 1)
 
 

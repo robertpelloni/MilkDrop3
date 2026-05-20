@@ -1,6 +1,6 @@
 # Project Structure
 
-Last Updated: 2026-05-20 06:01:38
+Last Updated: 2026-05-20 07:19:14
 
 ## Overview
 This file provides an automated visualization of the MilkDrop3 Omni-Workspace hierarchy.
@@ -29540,6 +29540,22 @@ This file provides an automated visualization of the MilkDrop3 Omni-Workspace hi
                 package-lock.json
             openai-codex/
                 package-lock.json
+    src/
+        workspace/
+            __init__.py
+            archive_handoff.py
+            check_health.py
+            generate_dashboard.py
+            generate_project_structure.py
+            prune_broken_submodules.py
+            test_ecosystem.py
+            update_repos_v5.py
+            web_dashboard.py
+            workspace_log.py
+            workspace_monitor.py
+            workspace_run.py
+            workspace_session.py
+            workspace_version.py
     docs/
         UNIVERSAL_LLM_INSTRUCTIONS.md
     metamcp/
@@ -35944,19 +35960,7 @@ This file provides an automated visualization of the MilkDrop3 Omni-Workspace hi
                 todo-baseline.json
                 todo-baseline.meta.json
     scripts/
-        archive_handoff.py
-        check_health.py
-        generate_dashboard.py
-        generate_project_structure.py
-        prune_broken_submodules.py
-        test_ecosystem.py
-        update_repos_v5.py
         workspace_cli.py
-        workspace_log.py
-        workspace_monitor.py
-        workspace_run.py
-        workspace_session.py
-        workspace_version.py
     okgame/
         .build_success
         .cproject
@@ -71448,6 +71452,7 @@ This file provides an automated visualization of the MilkDrop3 Omni-Workspace hi
             HANDOFF_v1.9.0_20260520_032529.md
             HANDOFF_v1.9.0_20260520_032738.md
             HANDOFF_v2.0.0_20260520_034004.md
+            HANDOFF_v2.1.0_20260520_060143.md
     bg/
         .borg-session.json
         .borg_startup_marker

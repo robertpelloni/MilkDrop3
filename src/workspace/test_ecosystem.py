@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-import workspace_run
+from . import workspace_run
 import sys
 import os
-import workspace_log
+from . import workspace_log
 
 
 def run_ecosystem_tests():

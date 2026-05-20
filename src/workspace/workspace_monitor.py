@@ -2,7 +2,7 @@
 import os
 import time
 import subprocess
-import workspace_log
+from . import workspace_log
 
 
 def get_submodule_status():

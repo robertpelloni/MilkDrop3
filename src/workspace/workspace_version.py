@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 import os
-import workspace_log
+from . import workspace_log
 
 
 def get_current_version():

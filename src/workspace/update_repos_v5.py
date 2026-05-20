@@ -2,12 +2,18 @@
 import os
 import subprocess
 import sys
-import generate_dashboard
-import generate_project_structure
-import prune_broken_submodules
-import check_health
-import test_ecosystem
-import workspace_log
+
+# Ensure src is in path for package imports when run as script
+sys.path.append(
+    os.path.join(os.path.dirname(os.path.abspath(__file__)), "../..")
+)
+
+from . import generate_dashboard          # noqa: E402
+from . import generate_project_structure  # noqa: E402
+from . import prune_broken_submodules     # noqa: E402
+from . import check_health                # noqa: E402
+from . import test_ecosystem              # noqa: E402
+from . import workspace_log               # noqa: E402
 
 
 def run_command(command, cwd=None):

@@ -3,19 +3,24 @@ import argparse
 import sys
 import os
 
-# Ensure the scripts directory is in the path for modular imports
-sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+# Add src to path for package imports
+sys.path.append(
+    os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
+)
 
-import update_repos_v5             # noqa: E402
-import check_health                # noqa: E402
-import test_ecosystem              # noqa: E402
-import generate_dashboard          # noqa: E402
-import generate_project_structure  # noqa: E402
-import workspace_run               # noqa: E402
-import prune_broken_submodules     # noqa: E402
-import workspace_version           # noqa: E402
-import archive_handoff             # noqa: E402
-import workspace_monitor           # noqa: E402
+from src.workspace import (  # noqa: E402
+    update_repos_v5,
+    check_health,
+    test_ecosystem,
+    generate_dashboard,
+    generate_project_structure,
+    workspace_run,
+    prune_broken_submodules,
+    workspace_version,
+    archive_handoff,
+    workspace_monitor,
+    web_dashboard
+)
 
 
 def main():
@@ -66,6 +71,14 @@ def main():
         "--interval", type=int, default=5, help="Refresh interval in seconds"
     )
 
+    # Web Dashboard
+    web_parser = subparsers.add_parser(
+        "web", help="Start web-based dashboard"
+    )
+    web_parser.add_argument(
+        "--port", type=int, default=8080, help="Port to run server on"
+    )
+
     # Run bulk command
     run_parser = subparsers.add_parser("run", help="Run command in submodules")
     run_parser.add_argument("shell_command", help="Command to execute")
@@ -98,6 +111,8 @@ def main():
         archive_handoff.archive_handoff()
     elif args.command == "monitor":
         workspace_monitor.run_monitor(interval=args.interval)
+    elif args.command == "web":
+        web_dashboard.run_server(port=args.port)
     elif args.command == "run":
         success = workspace_run.workspace_run(args.shell_command)
         sys.exit(0 if success else 1)

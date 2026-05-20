@@ -2,8 +2,8 @@
 import shutil
 import os
 import datetime
-import workspace_log
-import workspace_version
+from . import workspace_log
+from . import workspace_version
 
 
 def archive_handoff():

@@ -2,7 +2,7 @@
 import subprocess
 import sys
 import os
-import workspace_log
+from . import workspace_log
 
 
 def run_command(command, cwd=None):

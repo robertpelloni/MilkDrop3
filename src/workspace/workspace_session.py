@@ -2,7 +2,7 @@
 import json
 import os
 import datetime
-import workspace_log
+from . import workspace_log
 
 SESSION_FILE = os.path.join("logs", "session_state.json")
 

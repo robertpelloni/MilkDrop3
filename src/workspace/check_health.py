@@ -2,7 +2,7 @@
 import os
 import subprocess
 import sys
-import workspace_log
+from . import workspace_log
 
 
 MANDATORY_FILES = [
@@ -27,7 +27,11 @@ MANDATORY_DIRS = [
     "metamcp",
     "bobmani",
     "fwber",
-    "bobcoin"
+    "bobcoin",
+    "itgmania",
+    "okgame",
+    "bg",
+    "raindropioapp"
 ]
 
 

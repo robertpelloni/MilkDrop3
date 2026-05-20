@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.2.0] - 2026-05-20
+### Added
+- Refactored entire maintenance suite into a formal `src.workspace` Python package.
+- Implemented `src/workspace/web_dashboard.py` for browser-based ecosystem monitoring.
+- Added `web` subcommand to Workspace CLI.
+- Modularized all maintenance logic for high-fidelity extensibility.
+- Fixed circular import issues and established package directory structure.
+
 ## [2.1.0] - 2026-05-20
 ### Added
 - Implemented `scripts/workspace_monitor.py` for real-time status and activity monitoring.

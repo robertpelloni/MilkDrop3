@@ -1,44 +1,85 @@
 #!/usr/bin/env python3
 from http.server import HTTPServer, BaseHTTPRequestHandler
 from ..core import workspace_log
+from ..core import workspace_version
 
 
 class DashboardHandler(BaseHTTPRequestHandler):
+    def get_file_content(self, filename, fallback="Content not available."):
+        try:
+            with open(filename, 'r') as f:
+                return f.read()
+        except Exception:
+            return fallback
+
     def do_GET(self):
         if self.path == '/':
             self.send_response(200)
             self.send_header('Content-type', 'text/html')
             self.end_headers()
 
-            # Read PROJECT_STRUCTURE.md and SUBMODULE_DASHBOARD.md
-            try:
-                with open('SUBMODULE_DASHBOARD.md', 'r') as f:
-                    sub_content = f.read()
-                with open('PROJECT_STRUCTURE.md', 'r') as f:
-                    struct_content = f.read()
-            except Exception:
-                sub_content = "Run 'workspace docs' to generate dashboard."
-                struct_content = "Run 'workspace docs' to generate structure."
+            vision = self.get_file_content('VISION.md')
+            roadmap = self.get_file_content('ROADMAP.md')
+            subs = self.get_file_content('SUBMODULE_DASHBOARD.md')
+            struct = self.get_file_content('PROJECT_STRUCTURE.md')
+            ver = workspace_version.get_current_version()
+
+            css = """
+            :root { --bg: #0a0a0c; --card-bg: #141418; --text: #e2e8f0;
+                    --accent: #10b981; --border: #27272a; }
+            body { font-family: sans-serif; background: var(--bg);
+                   color: var(--text); margin: 0; }
+            .container { max-width: 1200px; margin: 0 auto; padding: 40px; }
+            header { border-bottom: 1px solid var(--border);
+                     margin-bottom: 40px; display: flex;
+                     justify-content: space-between; }
+            h1 { background: linear-gradient(to right, #10b981, #3b82f6);
+                 -webkit-background-clip: text;
+                 -webkit-text-fill-color: transparent; }
+            .badge {
+                background: var(--card-bg); border: 1px solid var(--border);
+                padding: 4px 12px; border-radius: 20px;
+            }
+            .grid {
+                display: grid; grid-template-columns: 1fr 1fr; gap: 24px;
+            }
+            .card {
+                background: var(--card-bg); border: 1px solid var(--border);
+                border-radius: 12px; padding: 24px;
+            }
+            .card h2 { color: var(--accent); margin-top: 0; }
+            pre {
+                background: #000; color: #10b981; padding: 16px;
+                border-radius: 8px; font-size: 0.85rem; overflow-x: auto;
+                white-space: pre-wrap;
+            }
+            """
 
             html = f"""
+            <!DOCTYPE html>
             <html>
-            <head>
-                <title>MilkDrop3 Workspace Dashboard</title>
-                <style>
-                    body {{ font-family: sans-serif; padding: 20px; }}
-                    pre {{
-                        background: #f4f4f4;
-                        padding: 15px;
-                        overflow: auto;
-                    }}
-                </style>
-            </head>
+            <head><title>MilkDrop3 Hub</title><style>{css}</style></head>
             <body>
-                <h1>MilkDrop3 Omni-Workspace Monitor</h1>
-                <h2>Submodule Status</h2>
-                <pre>{sub_content}</pre>
-                <h2>Project Structure</h2>
-                <pre>{struct_content}</pre>
+                <div class="container">
+                    <header>
+                        <div><h1>MilkDrop3 Hub</h1><p>Monitor</p></div>
+                        <div class="badge">v{ver}</div>
+                    </header>
+                    <div class="grid">
+                        <div class="card">
+                            <h2>Vision</h2><pre>{vision}</pre>
+                        </div>
+                        <div class="card">
+                            <h2>Roadmap</h2><pre>{roadmap}</pre>
+                        </div>
+                        <div class="card" style="grid-column: 1 / -1;">
+                            <h2>Submodules</h2><pre>{subs}</pre>
+                        </div>
+                        <div class="card" style="grid-column: 1 / -1;">
+                            <h2>Structure</h2><pre>{struct}</pre>
+                        </div>
+                    </div>
+                </div>
             </body>
             </html>
             """

@@ -22,7 +22,9 @@ from src.workspace import (  # noqa: E402
     workspace_monitor,
     web_dashboard,
     session_orchestrator,
-    build
+    build,
+    search,
+    release_manager
 )
 
 
@@ -73,6 +75,15 @@ def main():
     # Archive
     subparsers.add_parser("archive", help="Archive current handoff")
 
+    # Release
+    release_parser = subparsers.add_parser(
+        "release", help="Automate release cycle"
+    )
+    release_parser.add_argument(
+        "--bump", choices=["major", "minor", "patch"], default="minor",
+        help="Part of version to bump"
+    )
+
     # Session
     session_parser = subparsers.add_parser(
         "session", help="Manage development session lifecycle"
@@ -112,6 +123,12 @@ def main():
     run_parser = subparsers.add_parser("run", help="Run command in submodules")
     run_parser.add_argument("shell_command", help="Command to execute")
 
+    # Search
+    search_parser = subparsers.add_parser(
+        "search", help="Ecosystem-wide search"
+    )
+    search_parser.add_argument("query", help="Search query")
+
     args = parser.parse_args()
 
     if not args.command:
@@ -143,6 +160,8 @@ def main():
         workspace_version.update_version_file(new_ver)
     elif args.command == "archive":
         archive_handoff.archive_handoff()
+    elif args.command == "release":
+        release_manager.prepare_release(args.bump)
     elif args.command == "session":
         if args.session_command == "start":
             session_orchestrator.start_session(args.model)
@@ -158,6 +177,8 @@ def main():
     elif args.command == "run":
         success = workspace_run.workspace_run(args.shell_command)
         sys.exit(0 if success else 1)
+    elif args.command == "search":
+        search.run_search(args.query)
 
 
 if __name__ == "__main__":

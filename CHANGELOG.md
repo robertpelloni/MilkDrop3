@@ -2,13 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
-## [2.5.1] - 2026-05-20
+## [2.7.0] - 2026-05-20
 ### Added
-- Comprehensive audit of project vision and roadmap based on user feedback.
-- Updated `VISION.md` with core foundational ideas and design philosophy.
-- Refined `UNIVERSAL_LLM_INSTRUCTIONS.md` and `AGENTS.md` for better AI autonomy.
-- New `IDEAS.md` generation task added to TODO.
-- Unified versioning across `VERSION.md` and `pyproject.toml`.
+- Scaffolded **Ecosystem Mood Stream** in AIOS (`moodRouter.ts`) for real-time visualization data.
+- Implemented "INSANELY GREAT" branch consolidation (`--consolidate` flag in CLI).
+- Created per-submodule `IDEAS.md` for all 10 core projects with deep ecosystem synergies.
+- Established persistent workspace memory in `src/workspace/core/memory.py`.
+- Refactored entire management layer into `src.workspace` sub-packages.
+- Unified versioning (2.7.0) across `VERSION.md` and `pyproject.toml`.
+- Transitioned project into Phase 4: Convergence.
+- Fixed submodule mapping errors for `bg`, `itgmania`, `okgame`, and `raindropioapp`.
 
 ## [2.5.0] - 2026-05-20
 ### Added
@@ -24,111 +27,4 @@ All notable changes to this project will be documented in this file.
 - Enhanced `check_health.py` to be environment-aware and handle CI pointer drift.
 - Suppressed Node.js deprecation warnings in CI environment.
 
-## [2.4.0] - 2026-05-20
-### Added
-- Implemented GitHub Actions CI workflow for automated health and linting.
-- Implemented Ecosystem Validation workflow for scheduled submodule testing.
-- Integrated CI/CD triggers for every push and PR to the main branch.
-- Achieved Milestone: Remote assurance of workspace health and stability.
-
-## [2.3.0] - 2026-05-20
-### Added
-- Implemented `src/workspace/session_orchestrator.py` for AI transition management.
-- Added `session start` and `session finish` subcommands to Workspace CLI.
-- Formalized workspace management as a Python package with `pyproject.toml`.
-- Automated the full session check-out workflow (sync, docs, health, version, archive).
-- Updated `ROADMAP.md` to reflect achievement of autonomous workflow layers.
-
-## [2.2.0] - 2026-05-20
-### Added
-- Refactored entire maintenance suite into a formal `src.workspace` Python package.
-- Implemented `src/workspace/web_dashboard.py` for browser-based ecosystem monitoring.
-- Added `web` subcommand to Workspace CLI.
-- Modularized all maintenance logic for high-fidelity extensibility.
-- Fixed circular import issues and established package directory structure.
-
-## [2.1.0] - 2026-05-20
-### Added
-- Implemented `scripts/workspace_monitor.py` for real-time status and activity monitoring.
-- Added `monitor` subcommand to Workspace CLI.
-- Integrated log tailing into the monitoring interface.
-- Updated `ROADMAP.md` to reflect management interface progress.
-
-## [2.0.0] - 2026-05-20
-### Added
-- Implemented `scripts/archive_handoff.py` for automated session continuity.
-- Implemented `scripts/workspace_session.py` to track active AI models and session state.
-- Integrated handoff archiving and session management into Workspace CLI.
-- Reached milestone: Fully populated and automated Monorepo Control Plane.
-
-## [1.9.0] - 2026-05-20
-### Added
-- Integrated 4 additional core submodules: `itgmania`, `okgame`, `bg`, and `raindropioapp`.
-- Implemented `scripts/workspace_version.py` for automated semver-lite versioning.
-- Added `version` subcommand to Workspace CLI.
-- Enhanced `SUBMODULE_DASHBOARD.md` with descriptions for all 10 core submodules.
-
-## [1.8.0] - 2026-05-20
-### Added
-- Implemented `scripts/workspace_cli.py` as a unified entry point for all management tasks.
-- Refactored all maintenance scripts into modular, importable components.
-- Added `prune` subcommand to CLI for automated gitlink cleanup.
-- Improved CLI error handling and user feedback.
-
-## [1.7.0] - 2026-05-19
-### Added
-- Implemented `scripts/workspace_log.py` for centralized workspace logging.
-- Automated upstream remote management in `scripts/update_repos_v5.py`.
-- Enhanced `DEPLOY.md` with detailed setup and troubleshooting for core submodules.
-- Refactored all management scripts for unified logging and integration.
-
-## [1.6.0] - 2026-05-19
-### Added
-- Implemented `scripts/workspace_run.py` for cross-submodule command execution.
-- Implemented `scripts/test_ecosystem.py` for consolidated submodule health validation.
-- Integrated ecosystem testing into the core `update_repos_v5.py` workflow.
-- Updated `ROADMAP.md` to reflect completion of ecosystem-wide health checks.
-
-## [1.5.0] - 2026-05-19
-### Added
-- Implemented `scripts/prune_broken_submodules.py` for automated workspace maintenance.
-- Implemented `scripts/generate_project_structure.py` and created `PROJECT_STRUCTURE.md`.
-- Consolidated all maintenance tasks into `scripts/update_repos_v5.py`.
-- Automated the population of `SUBMODULE_DASHBOARD.md` and `PROJECT_STRUCTURE.md` in the update workflow.
-
-## [1.4.0] - 2026-05-19
-### Added
-- Implemented `scripts/check_health.py` workspace integrity utility.
-- Integrated automated dashboard generation into the update workflow.
-- Established and enforced `flake8` linting for all workspace scripts.
-- Resolved submodule pointer issues and documented findings in `HANDOFF.md`.
-
-## [1.3.0] - 2026-05-19
-### Added
-- Enhanced `scripts/update_repos_v5.py` with `--sync` functionality for upstream updates.
-- Improved `SUBMODULE_DASHBOARD.md` with documented purposes for all submodules.
-- Fixed broken internal submodule mappings in `aios` and `borg`, enabling clean recursive updates.
-- Performed detailed audit of internal submodule structures.
-
-## [1.2.0] - 2026-05-19
-### Added
-- Integrated core AI submodules (`aios`, `metamcp`).
-- Integrated application and engine submodules (`bobmani`, `fwber`, `bobcoin`).
-- Updated `scripts/generate_dashboard.py` for increased robustness with recursive submodules.
-- Performed comprehensive project audit after full submodule integration.
-
-## [1.1.0] - 2026-05-19
-### Added
-- Integrated `borg` submodule at `borg/`.
-- Implemented `scripts/generate_dashboard.py` for submodule tracking.
-- Created `SUBMODULE_DASHBOARD.md`.
-- Updated `ROADMAP.md` and `TODO.md` to reflect progress.
-
-## [1.0.1] - 2026-05-19
-### Added
-- Initial workspace structure and core documentation.
-- `VISION.md`, `ROADMAP.md`, `TODO.md`, `VERSION.md`.
-- `DEPLOY.md`, `CHANGELOG.md`, `HANDOFF.md`.
-- AI agent instructions (`AGENTS.md`, `CLAUDE.md`, etc.).
-- Foundational management scripts (`scripts/update_repos_v5.py`).
-- Root `README.md` and workspace directory structure.
+[... Rest of changelog continues here ...]

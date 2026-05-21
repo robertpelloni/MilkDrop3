@@ -16,15 +16,15 @@
 [submodule "bobcoin"]
 	path = bobcoin
 	url = https://github.com/robertpelloni/bobcoin.git
+[submodule "bg"]
+	path = bg
+	url = https://github.com/robertpelloni/bg.git
 [submodule "itgmania"]
 	path = itgmania
 	url = https://github.com/robertpelloni/itgmania.git
 [submodule "okgame"]
 	path = okgame
 	url = https://github.com/robertpelloni/okgame.git
-[submodule "bg"]
-	path = bg
-	url = https://github.com/robertpelloni/bg.git
 [submodule "raindropioapp"]
 	path = raindropioapp
 	url = https://github.com/robertpelloni/raindropioapp.git

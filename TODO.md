@@ -1,21 +1,21 @@
 # TODO - MilkDrop3 Omni-Workspace
 
-## Priority: Extreme (Next Implementation)
-- [ ] **Automated Branch Consolidation:** Implement a script/CLI command to intelligently merge all `robertpelloni` local feature branches into their respective main branches across all submodules.
-- [ ] **Submodule IDEAS Generation:** Create `IDEAS.md` for each of the 10 core submodules, analyzing their specific codebases in depth.
-- [ ] **Metamcp Fix:** Resolve the `metamcp` linting/dependency failure in the sandbox environment (missing `@repo/eslint-config`).
+## Priority: Extreme (Immediate Actions)
+- [ ] **Ecosystem Mood Stream:** Implement a REST/tRPC endpoint in AIOS to stream mood metrics for MilkDrop3.
+- [ ] **Unified Dashboard Polish:** Ensure all features in `web_dashboard.py` have tooltips and full descriptions.
+- [ ] **Metamcp Sandbox Fix:** Stabilize linting in restricted environments.
 
 ## Priority: High
-- [ ] **Unified Deployment:** Implement a `deploy` subcommand in `workspace_cli.py` to handle coordinated deployments.
-- [ ] **Parallel Builds:** Expand `src/workspace/execution/build.py` to support parallel submodule builds.
-- [ ] **Global Memory Implementation:** Finalize the connection between `borg`, `aios`, and the workspace root for persistent session memory.
+- [ ] **Global Search Implementation:** Scaffold the root-level search engine.
+- [ ] **Automated Release Cycle:** Script that handles version bumping, changelog update, and submodule tagging in one go.
+- [ ] **TUI Metrics Dashboard:** Upgrade `monitor` to a full Textual-based interface.
 
 ## Priority: Medium
-- [ ] **UI Polish:** Audit `src/workspace/ui/web_dashboard.py` and ensure all features are represented with full labels, descriptions, and tooltips.
-- [ ] **Library Inventory:** Create a comprehensive `docs/LIBRARY_INVENTORY.md` listing every major dependency across the ecosystem.
-- [ ] **TUI Dashboard:** Implement a rich Terminal UI (TUI) for the `monitor` command using a library like `rich` or `textual`.
+- [ ] **Documentation Expansion:** Create deep-dive architecture guides for every submodule.
+- [ ] **Parallel Build Optimization:** Speed up ecosystem builds with concurrency.
+- [ ] **Auth Consolidation:** Research Bobcoin-based SSO.
 
 ## Priority: Low (Ongoing)
-- [ ] **Upstream Vigilance:** Continuously monitor and merge changes from upstream parents of all forks.
-- [ ] **Documentation Depth:** Regularly audit and expand the "why" comments in all management scripts.
-- [ ] **Refactoring:** Continuous cleanup of `src/workspace` sub-packages.
+- [ ] **Upstream Syncing:** Regular merges from original parents.
+- [ ] **Persistent Memory Logging:** Refine `memory.py` observation categories.
+- [ ] **Code Commenting Pass:** Ensure all new logic explains the "why."

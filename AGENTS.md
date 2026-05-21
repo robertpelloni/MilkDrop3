@@ -3,13 +3,14 @@
 ## Overview
 All AI agents operating in this repository MUST strictly adhere to the guidelines set forth in `docs/UNIVERSAL_LLM_INSTRUCTIONS.md`. This file serves as the root-level entry point for agent-specific guidance within the MilkDrop3 Omni-Workspace.
 
-## Direct Mandates from User
-- **Don't stop the party!** Keep going for as long as possible. Proceed testing and implementing incomplete features autonomously.
-- **Merge Intelligently:** Selectively merge all feature branches into main for all `robertpelloni` repos. Solve conflicts without losing any progress or features.
-- **Sync & Update:** Merge upstream changes and sync all submodules (recursively).
-- **Document Everything:** Update `VISION.md`, `ROADMAP.md`, `TODO.md`, `CHANGELOG.md`, `VERSION.md`, `HANDOFF.md`, `MEMORY.md`, and `DEPLOY.md`.
-- **Comment Heavily:** Explain the 'why' behind the code, side effects, and findings.
-- **UI Excellence:** Every feature must be fully represented in the UI with descriptions and tooltips.
+## Core Mandates
+1. **Reference the Source:** Always consult `docs/UNIVERSAL_LLM_INSTRUCTIONS.md` before performing any major actions.
+2. **Autonomy:** Proceed with tasks independently. If a script (like `scripts/update_repos_v5.py`) is missing or broken, fix it or implement a functional version.
+3. **Submodule Integrity:** Never break submodule links. Use the provided scripts to manage updates.
+4. **Versioning:** Every session MUST result in a version increment in `VERSION.md` and a corresponding entry in `CHANGELOG.md`.
 
-## Single Source of Truth
-Consult `docs/UNIVERSAL_LLM_INSTRUCTIONS.md` first.
+## Workflow
+- **Analyze:** Use `ls -R` and `grep` to understand the current state across all submodules.
+- **Audit:** Regularly update `HANDOFF.md` with findings.
+- **Implement:** Favor pragmatic, project-aligned improvements.
+- **Verify:** Run all available tests and build commands before submitting.

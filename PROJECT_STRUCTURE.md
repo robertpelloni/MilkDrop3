@@ -1,6 +1,6 @@
 # Project Structure
 
-Last Updated: 2026-05-20 18:27:29
+Last Updated: 2026-05-20 23:34:21
 
 ## Overview
 This file provides an automated visualization of the MilkDrop3 Omni-Workspace hierarchy.
@@ -16,6 +16,7 @@ This file provides an automated visualization of the MilkDrop3 Omni-Workspace hi
     GEMINI.md
     GPT.md
     HANDOFF.md
+    IDEAS.md
     MEMORY.md
     PROJECT_STRUCTURE.md
     README.md
@@ -26,7 +27,6 @@ This file provides an automated visualization of the MilkDrop3 Omni-Workspace hi
     VISION.md
     copilot-instructions.md
     pyproject.toml
-    pyproject.toml.tmp
     bobcoin/
         .borg_startup_marker
         .build_success
@@ -27075,7 +27075,6 @@ This file provides an automated visualization of the MilkDrop3 Omni-Workspace hi
                     native_supervisor_handlers.go
                     project_local.go
                     protocol_handlers.go
-                    protocol_handlers_test.go
                     saved_scripts_handlers.go
                     server.go
                     server.go.rej
@@ -27282,6 +27281,8 @@ This file provides an automated visualization of the MilkDrop3 Omni-Workspace hi
                 .gitkeep
                 README.md
                 dashboard-home.png
+            analysis/
+                ECOSYSTEM_MOOD_STREAM.md
             ai/
                 requirements/
                     go-foundation-assimilation.md
@@ -27956,6 +27957,7 @@ This file provides an automated visualization of the MilkDrop3 Omni-Workspace hi
                         meshRouter.ts
                         metricsRouter.test.ts
                         metricsRouter.ts
+                        moodRouter.ts
                         oauthRouter.test.ts
                         oauthRouter.ts
                         openWebUIRouter.ts
@@ -29550,10 +29552,12 @@ This file provides an automated visualization of the MilkDrop3 Omni-Workspace hi
             maintenance/
                 __init__.py
                 check_health.py
+                consolidate_branches.py
                 prune_broken_submodules.py
                 update_repos_v5.py
             core/
                 __init__.py
+                memory.py
                 workspace_log.py
                 workspace_session.py
                 workspace_version.py
@@ -35976,7 +35980,15 @@ This file provides an automated visualization of the MilkDrop3 Omni-Workspace hi
                 todo-baseline.json
                 todo-baseline.meta.json
     scripts/
+        check_health.py
+        generate_dashboard.py
+        generate_project_structure.py
+        prune_broken_submodules.py
+        test_ecosystem.py
+        update_repos_v5.py
         workspace_cli.py
+        workspace_log.py
+        workspace_run.py
     okgame/
         .build_success
         .cproject
@@ -65774,6 +65786,7 @@ This file provides an automated visualization of the MilkDrop3 Omni-Workspace hi
         CMakeLists.txt
         GEMINI.md
         GPT.md
+        IDEAS.md
         LICENSE
         LLM_INSTRUCTIONS.md
         Makefile
@@ -71455,6 +71468,7 @@ This file provides an automated visualization of the MilkDrop3 Omni-Workspace hi
         GEMINI.md
         GPT.md
         HANDOFF.md
+        IDEAS.md
         ROADMAP.md
         TODO.md
         VERSION.md
@@ -71475,7 +71489,7 @@ This file provides an automated visualization of the MilkDrop3 Omni-Workspace hi
             HANDOFF_v2.1.0_20260520_060143.md
             HANDOFF_v2.2.0_20260520_071920.md
             HANDOFF_v2.3.1_20260520_090912.md
-            HANDOFF_v2.5.1_20260520_182729.md
+            HANDOFF_v2.6.0_20260520_230354.md
     bg/
         .borg-session.json
         .borg_startup_marker

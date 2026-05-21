@@ -10,6 +10,7 @@ sys.path.append(
 
 from src.workspace import (  # noqa: E402
     update_repos_v5,
+    consolidate_branches,
     check_health,
     test_ecosystem,
     generate_dashboard,
@@ -38,6 +39,10 @@ def main():
     update_parser = subparsers.add_parser("update", help="Update submodules")
     update_parser.add_argument(
         "--sync", action="store_true", help="Sync with upstream remotes"
+    )
+    update_parser.add_argument(
+        "--consolidate", action="store_true",
+        help="Merge local feature branches"
     )
 
     # Health Check
@@ -117,6 +122,8 @@ def main():
         update_repos_v5.get_submodule_status()
     elif args.command == "update":
         update_repos_v5.orchestrate_update(sync=args.sync)
+        if args.consolidate:
+            consolidate_branches.orchestrate_consolidation()
     elif args.command == "health":
         success = check_health.run_health_check()
         sys.exit(0 if success else 1)

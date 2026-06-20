@@ -1,9 +1,6 @@
 [submodule "borg"]
 	path = borg
 	url = https://github.com/robertpelloni/borg.git
-[submodule "metamcp"]
-	path = metamcp
-	url = https://github.com/robertpelloni/metamcp.git
 [submodule "bobmani"]
 	path = bobmani
 	url = https://github.com/robertpelloni/bobmani.git
@@ -22,6 +19,3 @@
 [submodule "okgame"]
 	path = okgame
 	url = https://github.com/robertpelloni/okgame.git
-[submodule "raindropioapp"]
-	path = raindropioapp
-	url = https://github.com/robertpelloni/raindropioapp.git

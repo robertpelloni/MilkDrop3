@@ -10,9 +10,6 @@
 [submodule "bobcoin"]
 	path = bobcoin
 	url = https://github.com/robertpelloni/bobcoin.git
-[submodule "bg"]
-	path = bg
-	url = https://github.com/robertpelloni/bg.git
 [submodule "itgmania"]
 	path = itgmania
 	url = https://github.com/robertpelloni/itgmania.git

@@ -26,7 +26,7 @@ class DashboardHandler(BaseHTTPRequestHandler):
 
             css = """
             :root { --bg: #0a0a0c; --card-bg: #141418; --text: #e2e8f0;
-                    --accent: #10b981; --border: #27272a; }
+                    --accent: #10b981; --border: #27272a; --desc-text: #a1a1aa; }
             body { font-family: sans-serif; background: var(--bg);
                    color: var(--text); margin: 0; }
             .container { max-width: 1200px; margin: 0 auto; padding: 40px; }
@@ -39,6 +39,7 @@ class DashboardHandler(BaseHTTPRequestHandler):
             .badge {
                 background: var(--card-bg); border: 1px solid var(--border);
                 padding: 4px 12px; border-radius: 20px;
+                cursor: help;
             }
             .grid {
                 display: grid; grid-template-columns: 1fr 1fr; gap: 24px;
@@ -46,8 +47,11 @@ class DashboardHandler(BaseHTTPRequestHandler):
             .card {
                 background: var(--card-bg); border: 1px solid var(--border);
                 border-radius: 12px; padding: 24px;
+                transition: transform 0.2s;
             }
-            .card h2 { color: var(--accent); margin-top: 0; }
+            .card:hover { transform: translateY(-2px); }
+            .card h2 { color: var(--accent); margin-top: 0; margin-bottom: 8px; cursor: help; }
+            .description { color: var(--desc-text); font-size: 0.9rem; margin-bottom: 16px; }
             pre {
                 background: #000; color: #10b981; padding: 16px;
                 border-radius: 8px; font-size: 0.85rem; overflow-x: auto;
@@ -62,21 +66,32 @@ class DashboardHandler(BaseHTTPRequestHandler):
             <body>
                 <div class="container">
                     <header>
-                        <div><h1>MilkDrop3 Hub</h1><p>Monitor</p></div>
-                        <div class="badge">v{ver}</div>
+                        <div title="MilkDrop3 Omni-Workspace Monitor and Control Center">
+                            <h1>MilkDrop3 Hub</h1>
+                            <p>Real-time Ecosystem Monitor</p>
+                        </div>
+                        <div class="badge" title="Current Workspace Version">v{ver}</div>
                     </header>
                     <div class="grid">
-                        <div class="card">
-                            <h2>Vision</h2><pre>{vision}</pre>
+                        <div class="card" title="Long-term project vision and core foundations">
+                            <h2 title="Displays contents of VISION.md">Vision</h2>
+                            <p class="description">The ultimate goal and foundational concepts of the MilkDrop3 Omni-Workspace.</p>
+                            <pre>{vision}</pre>
                         </div>
-                        <div class="card">
-                            <h2>Roadmap</h2><pre>{roadmap}</pre>
+                        <div class="card" title="Current roadmap and milestone tracking">
+                            <h2 title="Displays contents of ROADMAP.md">Roadmap</h2>
+                            <p class="description">Structural milestones and long-term plans across the entire ecosystem.</p>
+                            <pre>{roadmap}</pre>
                         </div>
-                        <div class="card" style="grid-column: 1 / -1;">
-                            <h2>Submodules</h2><pre>{subs}</pre>
+                        <div class="card" style="grid-column: 1 / -1;" title="Real-time health and status of all nested submodules">
+                            <h2 title="Displays contents of SUBMODULE_DASHBOARD.md">Submodules Dashboard</h2>
+                            <p class="description">Comprehensive status matrix showing the health, branch, and sync state of all integrated repositories.</p>
+                            <pre>{subs}</pre>
                         </div>
-                        <div class="card" style="grid-column: 1 / -1;">
-                            <h2>Structure</h2><pre>{struct}</pre>
+                        <div class="card" style="grid-column: 1 / -1;" title="Directory structure and architectural organization">
+                            <h2 title="Displays contents of PROJECT_STRUCTURE.md">Workspace Structure</h2>
+                            <p class="description">Automatically generated map of the Omni-Workspace directory layout and submodule placement.</p>
+                            <pre>{struct}</pre>
                         </div>
                     </div>
                 </div>

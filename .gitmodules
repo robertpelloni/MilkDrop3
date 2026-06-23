@@ -7,12 +7,3 @@
 [submodule "fwber"]
 	path = fwber
 	url = https://github.com/robertpelloni/fwber.git
-[submodule "bobcoin"]
-	path = bobcoin
-	url = https://github.com/robertpelloni/bobcoin.git
-[submodule "itgmania"]
-	path = itgmania
-	url = https://github.com/robertpelloni/itgmania.git
-[submodule "okgame"]
-	path = okgame
-	url = https://github.com/robertpelloni/okgame.git

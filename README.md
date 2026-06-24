@@ -1,3 +1,5 @@
+🛠️ ALPHA SOFTWARE UNDER CONSTRUCTION — Use at your own risk. Backwards compatibility not guaranteed.
+
 # MilkDrop3 Omni-Workspace
 
 [![Version](https://img.shields.io/badge/version-dynamic-blue)](VERSION.md)

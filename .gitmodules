@@ -10,6 +10,9 @@
 [submodule "aios"]
 	path = aios
 	url = https://github.com/robertpelloni/aios.git
+[submodule "bg"]
+	path = bg
+	url = https://github.com/robertpelloni/bg.git
 [submodule "bobcoin"]
 	path = bobcoin
 	url = https://github.com/robertpelloni/bobcoin.git
@@ -19,6 +22,3 @@
 [submodule "okgame"]
 	path = okgame
 	url = https://github.com/robertpelloni/okgame.git
-[submodule "bg"]
-	path = bg
-	url = https://github.com/robertpelloni/bg.git

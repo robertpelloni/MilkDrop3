@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [3.1.0] - 2026-06-23
+### Added
+- Unified Dashboard Polish: Ensured all features in `web_dashboard.py` have tooltips and full descriptions.
+- Global Search Implementation: Scaffolded the root-level search engine.
+- Fixed CI failure caused by missing `pnpm` command.
+- Synchronized missing submodules (`aios`, `bg`, `bobcoin`, `itgmania`, `okgame`).
+
 ## [2.8.0] - 2026-05-21
 ### Added
 - Modernized **Web Dashboard** with a responsive Dark Mode layout and component cards.

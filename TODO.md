@@ -2,11 +2,11 @@
 
 ## Priority: Extreme (Immediate Actions)
 - [ ] **Ecosystem Mood Stream:** Implement a REST/tRPC endpoint in AIOS to stream mood metrics for MilkDrop3.
-- [ ] **Unified Dashboard Polish:** Ensure all features in `web_dashboard.py` have tooltips and full descriptions.
+- [x] **Unified Dashboard Polish:** Ensure all features in `web_dashboard.py` have tooltips and full descriptions.
 - [ ] **Metamcp Sandbox Fix:** Stabilize linting in restricted environments.
 
 ## Priority: High
-- [ ] **Global Search Implementation:** Scaffold the root-level search engine.
+- [x] **Global Search Implementation:** Scaffold the root-level search engine.
 - [ ] **Automated Release Cycle:** Script that handles version bumping, changelog update, and submodule tagging in one go.
 - [ ] **TUI Metrics Dashboard:** Upgrade `monitor` to a full Textual-based interface.
 

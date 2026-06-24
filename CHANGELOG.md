@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file.
 
+## [3.1.0] - 2026-06-24
+### Added
+- Synchronized missing submodules (`aios`, `bg`, `bobcoin`, `itgmania`, `okgame`).
+- Initialized empty paths for `metamcp` and `raindropioapp` submodules since they are failing to clone.
+
 ## [2.8.0] - 2026-05-21
 ### Added
 - Modernized **Web Dashboard** with a responsive Dark Mode layout and component cards.

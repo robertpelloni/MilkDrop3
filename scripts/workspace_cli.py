@@ -26,6 +26,7 @@ from src.workspace import (  # noqa: E402
     search,
     release_manager
 )
+from src.workspace.core import hypercode, healer  # noqa: E402
 
 
 def main():
@@ -129,6 +130,18 @@ def main():
     )
     search_parser.add_argument("query", help="Search query")
 
+    # Hypercode
+    hypercode_parser = subparsers.add_parser(
+        "hypercode", help="Execute hypercode commands"
+    )
+    hypercode_parser.add_argument("cmd", help="Command to execute")
+
+    # Healer
+    healer_parser = subparsers.add_parser(
+        "heal", help="Attempt to auto-heal ecosystem failures"
+    )
+    healer_parser.add_argument("error", help="Error string to diagnose")
+
     args = parser.parse_args()
 
     if not args.command:
@@ -179,6 +192,12 @@ def main():
         sys.exit(0 if success else 1)
     elif args.command == "search":
         search.run_search(args.query)
+    elif args.command == "hypercode":
+        success = hypercode.run_hypercode_command(args.cmd)
+        sys.exit(0 if success else 1)
+    elif args.command == "heal":
+        success = healer.attempt_heal(args.error)
+        sys.exit(0 if success else 1)
 
 
 if __name__ == "__main__":

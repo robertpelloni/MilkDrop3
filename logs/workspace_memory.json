@@ -1,0 +1,11 @@
+{
+  "observations": [
+    {
+      "timestamp": "2026-06-27T07:08:58.183542",
+      "category": "shared_context_from_borg",
+      "content": "{\"status\": \"active\", \"focus\": \"shared_memory\"}"
+    }
+  ],
+  "preferences": {},
+  "sessions": []
+}

@@ -18,10 +18,10 @@
  - [x] Implement consolidated build system for the ecosystem.
 
 ## Phase 4: Convergence (Current)
-- [ ] **Unified Deep Linking:** Finalize `hypercode://` integration across all submodules.
-- [ ] **Omni-Search:** Implement root-level search across code and L2 memories.
+- [x] **Unified Deep Linking:** Finalize `hypercode://` integration across all submodules.
+- [x] **Omni-Search:** Implement root-level search across code and L2 memories.
 - [x] **Shared AI Context:** Enable real-time memory sharing between `borg` and `aios`.
-- [ ] **Automated Ecosystem Repair:** Self-healing builds via Healer.
+- [x] **Automated Ecosystem Repair:** Self-healing builds via Healer.
 
 ## Phase 5: Autonomous Evolution
  - [ ] **AI-Written Roadmap:** Agents identify project gaps and update ROADMAP.md.

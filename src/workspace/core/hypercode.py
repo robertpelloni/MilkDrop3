@@ -21,10 +21,23 @@ def parse_hypercode_url(url):
         # Parse query arguments into a list of flags/values
         args = []
         if parsed.query:
-            query_params = urllib.parse.parse_qs(parsed.query)
-            for key, values in query_params.items():
-                for value in values:
-                    args.extend([f"--{key}", value])
+            query_params = urllib.parse.parse_qsl(parsed.query, keep_blank_values=True)
+            for key, value in query_params:
+                if key.startswith("--"):
+                    if value:
+                        args.extend([key, value])
+                    else:
+                        args.append(key)
+                elif key.startswith("-"):
+                     if value:
+                        args.extend([key, value])
+                     else:
+                        args.append(key)
+                else:
+                    args.append(key)
+                    if value:
+                        args.append(value)
+
 
         return {
             "submodule": submodule,

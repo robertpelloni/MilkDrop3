@@ -4,12 +4,13 @@
 [submodule "bobmani"]
 	path = bobmani
 	url = https://github.com/robertpelloni/bobmani.git
-[submodule "aios"]
-	path = aios
-	url = https://github.com/robertpelloni/aios
 [submodule "bg"]
 	path = bg
 	url = https://github.com/robertpelloni/bg.git
 [submodule "fwber"]
 	path = fwber
 	url = https://github.com/robertpelloni/fwber.git
+[submodule "aios"]
+	path = aios
+	url = https://github.com/robertpelloni/aios.git
+	shallow = true

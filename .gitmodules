@@ -7,7 +7,3 @@
 [submodule "fwber"]
 	path = fwber
 	url = https://github.com/robertpelloni/fwber.git
-[submodule "aios"]
-	path = aios
-	url = https://github.com/robertpelloni/aios.git
-	shallow = true
